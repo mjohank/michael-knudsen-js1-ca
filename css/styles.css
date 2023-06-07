@@ -95,17 +95,16 @@
 /* FOOTER */
 /**********************************/
 
-footer {
+/* footer {
   position: fixed;
   bottom: 0;
   width: 100%;
-}
+} */
 
 .footer-text {
   text-align: center;
-  font-size: 2rem;
+
   font-family: sans-serif;
-  margin-top: 1rem;
   padding: 2rem;
   background-color: #f3ce13;
 }
@@ -226,7 +225,7 @@ footer {
 /**********************************/
 
 .movie-container {
-  max-width: 50rem;
+  max-width: 40rem;
   margin: 3rem auto;
   font-family: sans-serif;
   background-color: #fff;
@@ -267,7 +266,7 @@ footer {
 
 .description {
   line-height: 1.4;
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
 }
 
 .details-img {
@@ -278,6 +277,35 @@ footer {
   background-repeat: no-repeat;
 }
 
+/**********************************/
+/* ABOUT PAGE */
+/**********************************/
+
+.about-txt-cont {
+  display: flex;
+  flex-direction: column;
+  max-width: 40rem;
+
+  margin: 3rem auto;
+  font-family: sans-serif;
+  border: 2px solid #f3ce13;
+  border-radius: 6px;
+}
+
+.about-heading {
+  text-align: center;
+  margin: 2rem;
+}
+
+.about-txt {
+  line-height: 1.5;
+  margin: 1rem;
+}
+
+.last-txt {
+  align-self: center;
+  margin-bottom: 2rem;
+}
 /**********************************/
 /* CONTACT PAGE */
 /**********************************/
@@ -312,6 +340,7 @@ i {
 }
 
 input {
+  background-color: #f3ce1338;
   width: 100%;
   margin-top: 2px;
   padding: 10px;

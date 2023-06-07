@@ -2,6 +2,7 @@ const movieInfo = document.querySelector(".movie-info-container");
 const pageTitle = document.querySelector("title");
 const currentLocation = document.querySelector(".current-location");
 const loaderContainer = document.querySelector(".loader-container");
+// loaderContainer is just a quickfix to center the loader.
 
 const queryString = document.location.search;
 const params = new URLSearchParams(queryString);
@@ -31,23 +32,22 @@ async function fetchMovieDetails() {
 
     loaderContainer.innerHTML = "";
     movieInfo.innerHTML = `<div class="movie-container">
-                                  <div class="rank-rating-bar">
-                                    <p class="rank">Rank <span class="rank-number">${movieDetails.rank}</span> / 30</p>
-                                    <p class="rating">IMDB rating: <span class="rating-number">${movieDetails.rating}</span> / 10</p>
-                                  </div>
+                              <div class="rank-rating-bar">
+                                <p class="rank">Rank <span class="rank-number">${movieDetails.rank}</span> / 30</p>
+                                <p class="rating">IMDB rating: <span class="rating-number">${movieDetails.rating}</span> / 10</p>
+                              </div>
 
-                                  <h1 class="details-title">${movieDetails.title}</h1>
+                              <h1 class="details-title">${movieDetails.title}</h1>
 
-                                  <div class="details-container">
-                                    <h2 class="director details"><span class="detail-heading">Director:</span> ${movieDetails.director}</h2>
-                                    <h2 class="genre details"><span class="detail-heading">Genre:</span> ${movieDetails.genre}</h2>
-                                    <h2 class="year details"><span class="detail-heading">Year:</span> ${movieDetails.year}</h2>
-                                    <h2 class="description details"><span class="detail-heading">Description:</span> ${movieDetails.description}</h2>
-                                  </div>
+                              <div class="details-container">
+                                <h2 class="director details"><span class="detail-heading">Director:</span> ${movieDetails.director}</h2>
+                                <h2 class="genre details"><span class="detail-heading">Genre:</span> ${movieDetails.genre}</h2>
+                                <h2 class="year details"><span class="detail-heading">Year:</span> ${movieDetails.year}</h2>
+                                <h2 class="description details"><span class="detail-heading">Description:</span> ${movieDetails.description}</h2>
+                              </div>                             
 
-                                  
-
-                                  <div class="details-img" style="background-image: url(${movieDetails.image})"></div>`;
+                              <div class="details-img" style="background-image: url(${movieDetails.image})"></div>
+                          </div>`;
   } catch (error) {
     loaderContainer.innerHTML = "";
     movieInfo.innerHTML = errorMessage(

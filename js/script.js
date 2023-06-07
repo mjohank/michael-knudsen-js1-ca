@@ -1,6 +1,6 @@
 const movieList = document.querySelector(".movie-list");
 const loaderContainer = document.querySelector(".loader-container");
-//Just a "quick-fix to positioning the loader"
+//The loaderContainer is just a "quick-fix" to centering the loader
 
 const url = "https://imdb-top-100-movies.p.rapidapi.com/";
 
