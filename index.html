@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>IMDB top 30 Movies</title>
+    <title>IMDb top 30 Movies</title>
     <link rel="stylesheet" href="/css/styles.css" />
   </head>
   <body>
@@ -17,24 +17,34 @@
         </ul>
       </nav>
     </header>
-    <main>
-      <h1 class="main-heading">IMDB top 30 movies</h1>
-      <p class="page-info">
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestias
-        accusantium, quas inventore quisquam eaque doloremque odit ducimus
-        possimus eius. Eaque fugiat placeat quam sapiente eum beatae esse
-        ratione cumque eligendi! Tempora, sapiente. Est minima placeat saepe
-        nobis ipsa vitae repellat illum culpa odio eius magnam necessitatibus
-        nisi, veniam dolorum voluptatum laudantium repellendus, sapiente tempora
-        hic suscipit odit consequatur numquam. Sint molestias nobis adipisci
-        architecto rerum maiores quos quidem, ut dolorem, veritatis eaque
-        incidunt officia vero?
-      </p>
-      <div class="movie-list">
-        <!-- <div class="loader"></div> -->
+
+    <main class="home-main-section">
+      <h1 class="main-heading">IMDb top 30 movies</h1>
+
+      <div class="page-info-container">
+        <p class="page-info p-i-1">
+          The following is a list of the top 30 greatest movies of all time
+          based on IMDb rating.
+        </p>
+
+        <p class="page-info">Click on an image for details about the movie</p>
       </div>
+
+      <div class="loader-container">
+        <div class="loader"></div>
+      </div>
+
+      <div class="movie-list"></div>
     </main>
 
-    <script src="/js/script.js"></script>
+    <footer>
+      <p class="footer-text">
+        API powered by
+        <a href="https://rapidapi.com/" class="footer-link">rapidapi.com</a>
+      </p>
+    </footer>
+
+    <script src="js/components/errorMessage.js"></script>
+    <script src="js/script.js"></script>
   </body>
 </html>

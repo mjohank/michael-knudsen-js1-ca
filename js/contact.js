@@ -7,6 +7,7 @@ const email = document.querySelector("#email");
 const emailError = document.querySelector("#email-error");
 const address = document.querySelector("#address");
 const addressError = document.querySelector("#address-error");
+const validationSuccess = document.querySelector(".validation-success");
 
 function validateForm() {
   event.preventDefault();
@@ -35,17 +36,16 @@ function validateForm() {
     addressError.style.display = "block";
   }
 
-  /*   if (fullName.value.trim().length > 0) {
-    fullNameError.style.display = "none";
+  if (
+    checkLength(fullName.value, 0) &&
+    checkLength(subject.value, 9) &&
+    validateEmail(email.value) &&
+    checkLength(address.value, 25)
+  ) {
+    validationSuccess.style.display = "block";
   } else {
-    fullNameError.style.display = "block";
+    validationSuccess.style.display = "none";
   }
-
-  if (subject.value.trim().length > 9) {
-    subjectError.style.display = "none";
-  } else {
-    subjectError.style.display = "block";
-  } */
 
   console.log("Seems it worked");
 }

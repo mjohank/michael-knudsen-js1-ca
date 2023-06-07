@@ -1,5 +1,8 @@
-const detailContainer = document.querySelector(".movie-details");
+const movieInfo = document.querySelector(".movie-info-container");
 const pageTitle = document.querySelector("title");
+const currentLocation = document.querySelector(".current-location");
+const loaderContainer = document.querySelector(".loader-container");
+
 const queryString = document.location.search;
 const params = new URLSearchParams(queryString);
 const id = params.get("id");
@@ -19,37 +22,37 @@ const options = {
 async function fetchMovieDetails() {
   try {
     const response = await fetch(detailsURL, options);
-    // console.log(response);
+
     const movieDetails = await response.json();
-    // console.log(movieDetails);
+    console.log(movieDetails);
 
     pageTitle.innerHTML = `${movieDetails.id}: ${movieDetails.title}`;
+    currentLocation.innerHTML = `${movieDetails.title}`;
 
-    detailContainer.innerHTML = `<div class="movie-container">
-                                  <div class="top-flex">
-                                    <p class="rank">Rank ${movieDetails.rank} / 30</p>
+    loaderContainer.innerHTML = "";
+    movieInfo.innerHTML = `<div class="movie-container">
+                                  <div class="rank-rating-bar">
+                                    <p class="rank">Rank <span class="rank-number">${movieDetails.rank}</span> / 30</p>
                                     <p class="rating">IMDB rating: <span class="rating-number">${movieDetails.rating}</span> / 10</p>
                                   </div>
 
                                   <h1 class="details-title">${movieDetails.title}</h1>
 
                                   <div class="details-container">
-                                    <p class="director details"><span class="detail-heading">Director:</span> ${movieDetails.director}</p>
-                                    <p class="genre details"><span class="detail-heading">Genre:</span> ${movieDetails.genre}</p>
-                                    <p class="year details"><span class="detail-heading">Year:</span> ${movieDetails.year}</p>
-                                    <p class="description details"><span class="detail-heading">Description:</span> ${movieDetails.description}</p>
+                                    <h2 class="director details"><span class="detail-heading">Director:</span> ${movieDetails.director}</h2>
+                                    <h2 class="genre details"><span class="detail-heading">Genre:</span> ${movieDetails.genre}</h2>
+                                    <h2 class="year details"><span class="detail-heading">Year:</span> ${movieDetails.year}</h2>
+                                    <h2 class="description details"><span class="detail-heading">Description:</span> ${movieDetails.description}</h2>
                                   </div>
 
-                                  <div class="trailer-container">
-                                    <iframe width="560" height="315" src="${movieDetails.trailer}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                                  </div>
-
-                                  <p>If you have any issues viewing the content on this page or would like to give us your two cents on the rating of this movie, feel free to let us know by <a href="../contact.html" class="details-contact-link">clicking this link</a></p>
-                                </div>
                                   
-                                  `;
+
+                                  <div class="details-img" style="background-image: url(${movieDetails.image})"></div>`;
   } catch (error) {
-    console.log(error);
+    loaderContainer.innerHTML = "";
+    movieInfo.innerHTML = errorMessage(
+      "An error occurred while trying to fetch the API"
+    );
   }
 }
 

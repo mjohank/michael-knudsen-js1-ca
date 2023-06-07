@@ -1,184 +1,85 @@
 * {
   box-sizing: border-box;
   margin: 0;
+  padding: 0;
 }
 
-header {
-}
+/**********************************/
+/* GLOBAL CSS */
+/**********************************/
 
-.nav {
-}
+/**********************************/
+/* NAVIGATION */
+/**********************************/
 
 .nav-list {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
+  gap: 2rem;
+  align-items: center;
   list-style: none;
-  background-color: #fff;
+  background-color: #f3ce13;
   padding: 2rem;
 }
 
 .nav-list a {
   text-decoration: none;
   font-size: 2rem;
-  font-family: sans-serif;
-  color: rgb(30, 9, 53);
+  letter-spacing: 1.5px;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  color: black;
 }
 
 .nav-list a:visited {
-  color: rgb(30, 9, 53);
+  color: black;
 }
 
 .nav-list a.current {
   text-decoration: underline;
 }
 
+/**********************************/
+/* BREADCRUMBS */
+/**********************************/
+
 .breadcrumb-nav {
-  margin: 3rem;
-}
-
-.breadcrumb-nav a {
-  color: orangered;
-  font-size: 2rem;
-}
-
-.main-heading {
-  margin-top: 2rem;
-  margin-bottom: 1em;
-  font-size: 2em;
-  font-family: sans-serif;
-  text-align: center;
-  padding: 2rem;
-  color: salmon;
-}
-
-.page-info {
-  padding: 2rem;
-  color: salmon;
-  font-family: sans-serif;
-  line-height: 1.5;
-}
-
-.movie-list {
   display: flex;
-  flex-flow: row wrap;
-  justify-content: center;
+  gap: 1rem;
+  align-items: center;
+  font-family: sans-serif;
   margin: 1rem;
-  border: 4px solid salmon;
-  padding: 1rem;
-  border-radius: 0.5rem;
-  background-color: black;
 }
 
-.card {
-  display: flex;
-  flex-direction: column;
-  flex-basis: 100%;
-  max-width: 300px;
-  margin: 1rem;
-  border-radius: 0.5rem;
-  padding: 1rem 0 1rem 0;
+.crumb-link {
   text-decoration: none;
-  border: 2px solid #fff;
-  background-color: black;
+  color: blue;
 }
 
-.card-img {
-  height: 300px;
-  background-size: cover;
-  background-position: center top;
-  background-repeat: no-repeat;
+.current-location {
+  text-decoration: underline;
 }
 
-.card-rank {
-  font-size: 16px;
-  margin-bottom: 0.5rem;
-  color: salmon;
-  font-weight: bold;
-  text-align: center;
-}
+/**********************************/
+/* LOADER */
+/**********************************/
 
-.card-title {
-  font-size: 20px;
-  margin-bottom: 1rem;
-  color: salmon;
-  font-weight: bold;
-  text-align: center;
-  margin-top: 0.4rem;
-  font-family: sans-serif;
-}
-
-/* DETAILS PAGE STYLING */
-
-.movie-container {
-  max-width: 50rem;
-  margin: 3rem auto;
-  border-radius: 8px;
-  padding: 1rem;
-
+.loader-container {
   display: flex;
-  flex-direction: column;
-  background-color: #fff;
+  justify-content: center;
+  margin: 5rem;
 }
 
-body {
-  background-color: rgb(184, 177, 177);
-}
+/* The loader container is just a quick fix that I allowed myself since styling wasnt the focus of the assignment. */
 
-.trailer-container {
-  margin: 4rem 0;
-  align-self: center;
-}
-
-.detail-heading {
-  font-weight: bold;
-}
-
-.top-flex {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-}
-.rank {
-  font-family: sans-serif;
-  margin-bottom: 1rem;
-}
-
-.rating {
-  font-family: sans-serif;
-}
-
-.rating-number {
-  font-weight: bold;
-}
-
-.details-title {
-  margin-bottom: 0.7em;
-  font-family: sans-serif;
-  text-align: center;
-}
-
-.details {
-  margin-bottom: 0.5rem;
-}
-
-.description {
-  line-height: 1.2;
-}
-
-.hidden {
-  display: none;
-}
-
-/* LOADER STYLING */
 .loader {
   border: 16px solid #f3f3f3;
-  border-top: 16px solid rgb(161, 30, 98);
+  border-top: 16px solid #f3ce13;
   border-radius: 50%;
   width: 120px;
   height: 120px;
   animation: spin 2s linear infinite;
-  margin-left: 50%;
-  transform: translateX(-50%);
+  left: 50%;
+  transform: translate(-50%);
 }
 
 @keyframes spin {
@@ -190,32 +91,235 @@ body {
   }
 }
 
-/* CONTACT PAGE */
+/**********************************/
+/* FOOTER */
+/**********************************/
 
-.form-container {
-  max-width: 800px;
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+.footer-text {
+  text-align: center;
+  font-size: 2rem;
+  font-family: sans-serif;
+  margin-top: 1rem;
+  padding: 2rem;
+  background-color: #f3ce13;
+}
+
+.footer-link {
+  color: blue;
+  text-decoration: none;
+}
+
+/**********************************/
+/* ERROR MESSAGE */
+/**********************************/
+
+.error {
+  max-width: 50rem;
+
+  color: red;
+  background-color: #f3ce1359;
+
+  font-size: 2rem;
+  font-family: sans-serif;
+  font-weight: bold;
+
+  border: 8px solid red;
+  border-radius: 20px;
+
+  padding: 2rem;
   margin: 0 auto;
 }
 
-#contact-form {
-  padding: 2rem;
-  border: 2px solid green;
+/**********************************/
+/* PAGE SPECIFIC CSS */
+/**********************************/
+
+/**********************************/
+/* HOMEPAGE */
+/**********************************/
+
+.home-main-section {
+  margin: 0 3rem;
 }
 
-.flex-container {
-  display: flex;
-  flex-direction: column;
+.main-heading {
+  font-size: 3rem;
+  font-family: sans-serif;
+  color: black;
+  text-align: center;
+  margin: 3rem 0;
+}
+
+.page-info-container {
+  margin-bottom: 3rem;
+}
+
+.page-info {
+  /* padding: 2rem; */
+  color: black;
+  font-family: sans-serif;
+  line-height: 1.5;
+  text-align: center;
+  font-size: 2rem;
+}
+
+.p-i-1 {
   margin-bottom: 1rem;
 }
 
-.input {
+.movie-list {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  background-color: #f3ce13;
+  padding: 2rem;
+  margin-bottom: 15rem;
+  border-radius: 1.5rem;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 100%;
+  justify-content: center;
+  max-width: 300px;
+  text-decoration: none;
+  background-color: black;
+  margin: 1.5rem;
+  /* padding: 1rem 0; */
+
+  border-radius: 0.5rem;
+}
+
+.card-rank {
+  font-family: sans-serif;
+  font-size: 1.5rem;
+  color: #fff;
+  font-weight: bold;
+  text-align: center;
+  margin: 1rem 0;
+}
+
+.card-img {
+  height: 300px;
+  background-size: cover;
+}
+
+.card-title {
+  font-size: 20px;
+  color: #fff;
+  font-weight: bold;
+  margin: 1rem 0;
+  font-family: sans-serif;
+  text-align: center;
+  margin: 2rem 0;
+}
+
+/**********************************/
+/* DETAILS PAGE */
+/**********************************/
+
+.movie-container {
+  max-width: 50rem;
+  margin: 3rem auto;
+  font-family: sans-serif;
+  background-color: #fff;
+  border: 24px solid #f3ce13;
+  border-radius: 8px;
+}
+
+.rank-rating-bar {
+  font-size: 1.2rem;
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+}
+
+.rank-number,
+.rating-number {
+  font-weight: bold;
+}
+
+.details-container {
+  margin: 1rem;
+}
+
+.details-title {
+  margin-top: 2rem;
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+.detail-heading {
+  font-weight: bold;
+}
+
+.details {
+  margin-bottom: 1rem;
+  font-weight: lighter;
+}
+
+.description {
+  line-height: 1.4;
+  margin-bottom: 2rem;
+}
+
+.details-img {
+  width: 100%;
+  height: 800px;
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+}
+
+/**********************************/
+/* CONTACT PAGE */
+/**********************************/
+
+.form-container {
+  max-width: 800px;
+  margin: 5rem auto;
+  font-family: sans-serif;
+}
+
+.validation-success {
+  text-align: center;
+  color: green;
+  font-size: 2rem;
+  margin-top: 3rem;
+  display: none;
+}
+
+i {
+  font-size: 4rem;
+  margin-top: 1rem;
+}
+
+#contact-form {
+  margin: 2rem 3rem;
+  padding: 2rem;
+  border: 2px solid #f3ce13;
+  border-radius: 1rem;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+}
+
+input {
   width: 100%;
   margin-top: 2px;
   padding: 10px;
   font-size: 1rem;
 }
 
-.label {
+label {
+  display: block;
   margin-top: 1rem;
 }
 
@@ -224,4 +328,18 @@ body {
   color: red;
   font-size: 1rem;
   margin-top: 2px;
+}
+
+button {
+  background: #f3ce13;
+  border: none;
+  width: 200px;
+  padding: 1rem;
+  color: black;
+  font-weight: bold;
+  font-size: 1.5rem;
+  margin-top: 2rem;
+  cursor: pointer;
+  border-radius: 0.2rem;
+  align-self: center;
 }

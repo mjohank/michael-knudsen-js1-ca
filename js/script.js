@@ -1,4 +1,6 @@
-const container = document.querySelector(".movie-list");
+const movieList = document.querySelector(".movie-list");
+const loaderContainer = document.querySelector(".loader-container");
+//Just a "quick-fix to positioning the loader"
 
 const url = "https://imdb-top-100-movies.p.rapidapi.com/";
 
@@ -14,20 +16,25 @@ async function getMovies() {
   try {
     const response = await fetch(url, options);
     const json = await response.json();
-    /*     console.log(json);
-     */
+
+    movieList.innerHTML = "";
+    loaderContainer.innerHTML = "";
+
     for (let i = 0; i < json.length; i++) {
       if (i === 30) {
         break;
       }
-      container.innerHTML += `<a href="details.html?id=${json[i].id}" class="card">
-                                <h3 class="card-rank">Rank ${json[i].rank}:</h3>
+      movieList.innerHTML += `<a href="details.html?id=${json[i].id}" class="card">
+                                <h2 class="card-rank">Rank ${json[i].rank}:</h2>
                                 <div class="card-img" style="background-image:url(${json[i].image})"></div>
-                                <h2 class="card-title">${json[i].title}</h2>
+                                <h3 class="card-title">${json[i].title}</h3>
                               </a>`;
     }
   } catch (error) {
-    console.log(error);
+    loaderContainer.innerHTML = "";
+    movieList.innerHTML = errorMessage(
+      "An error occurred while trying to fetch the API"
+    );
   }
 }
 
