@@ -10,12 +10,12 @@ const queryString = document.location.search;
 const params = new URLSearchParams(queryString);
 const id = params.get("id");
 
-const detailsURL = "https://imdb-top-100-movies.p.rapidapi.com/" + id;
+const detailsURL = "https://imdb-top-100-movies.p.rapidapi.scom/" + id;
 
 const options = {
   method: "GET",
   headers: {
-    "X-RapidAPI-Key": "ac20bdc42bmshd41edb17e496193p1b50d1jsnb62819e66960",
+    "X-RapidAPI-Key": "insert apikey here",
     "X-RapidAPI-Host": "imdb-top-100-movies.p.rapidapi.com",
   },
 };

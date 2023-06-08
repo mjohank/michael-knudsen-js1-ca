@@ -35,8 +35,11 @@
 }
 
 .nav-list a:hover {
-  /* background-color: black;
-  color: #f3ce13; */
+  color: #f3ce13;
+  border: 2px solid black;
+  border-radius: 6px;
+  padding: 0.5rem;
+  background-color: black;
 }
 
 .nav-list a.current {
