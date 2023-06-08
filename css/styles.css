@@ -177,8 +177,8 @@
   flex-flow: row wrap;
   justify-content: center;
   background-color: #f3ce13;
-  padding: 2rem;
-  margin-bottom: 15rem;
+  padding: 1rem;
+  margin-bottom: 10rem;
   border-radius: 1.5rem;
 }
 
@@ -187,10 +187,10 @@
   flex-direction: column;
   flex-basis: 100%;
   justify-content: center;
-  max-width: 300px;
+  max-width: 14rem;
   text-decoration: none;
   background-color: black;
-  margin: 1.5rem;
+  margin: 1rem;
   /* padding: 1rem 0; */
 
   border-radius: 0.5rem;
@@ -206,7 +206,7 @@
 }
 
 .card-img {
-  height: 300px;
+  height: 15rem;
   background-size: cover;
 }
 
@@ -217,7 +217,7 @@
   margin: 1rem 0;
   font-family: sans-serif;
   text-align: center;
-  margin: 2rem 0;
+  margin: 2rem auto;
 }
 
 /**********************************/
@@ -288,7 +288,7 @@
 
   margin: 3rem auto;
   font-family: sans-serif;
-  border: 2px solid #f3ce13;
+  border: 3px solid #f3ce13;
   border-radius: 6px;
 }
 
