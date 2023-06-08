@@ -1,3 +1,5 @@
+import { errorMessage } from "./components/errorMessage.js";
+
 const movieList = document.querySelector(".movie-list");
 const loaderContainer = document.querySelector(".loader-container");
 //The loaderContainer is just a "quick-fix" to centering the loader
@@ -12,7 +14,7 @@ const options = {
   },
 };
 
-async function getMovies() {
+async function fetchMovies() {
   try {
     const response = await fetch(url, options);
     const json = await response.json();
@@ -38,4 +40,4 @@ async function getMovies() {
   }
 }
 
-getMovies();
+fetchMovies();

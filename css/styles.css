@@ -34,6 +34,11 @@
   color: black;
 }
 
+.nav-list a:hover {
+  /* background-color: black;
+  color: #f3ce13; */
+}
+
 .nav-list a.current {
   text-decoration: underline;
 }
@@ -69,9 +74,11 @@
   margin: 5rem;
 }
 
-/* The loader container is just a quick fix that I allowed myself since styling wasnt the focus of the assignment. */
+/* The loader-container is just a quick fix that I allowed myself since styling wasnt the focus of the assignment. */
 
 .loader {
+  display: flex;
+  justify-content: center;
   border: 16px solid #f3f3f3;
   border-top: 16px solid #f3ce13;
   border-radius: 50%;
@@ -105,7 +112,7 @@
   text-align: center;
 
   font-family: sans-serif;
-  padding: 2rem;
+  padding: 1rem;
   background-color: #f3ce13;
 }
 
@@ -245,7 +252,7 @@
   font-weight: bold;
 }
 
-.details-container {
+.details-txt-container {
   margin: 1rem;
 }
 
@@ -350,6 +357,12 @@ input {
 label {
   display: block;
   margin-top: 1rem;
+}
+
+.inp-requirements {
+  font-size: 0.8rem;
+  margin-left: 0.1rem;
+  color: #3f3d3d;
 }
 
 .form-error {

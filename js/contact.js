@@ -1,3 +1,8 @@
+import { checkLength } from "./components/checkLength.js";
+import { validateEmail } from "./components/validateEmail.js";
+
+////////////////////////////
+
 const form = document.querySelector("#contact-form");
 const fullName = document.querySelector("#fullname");
 const fullNameError = document.querySelector("#fullname-error");
@@ -8,6 +13,8 @@ const emailError = document.querySelector("#email-error");
 const address = document.querySelector("#address");
 const addressError = document.querySelector("#address-error");
 const validationSuccess = document.querySelector(".validation-success");
+
+////////////////////////////
 
 function validateForm() {
   event.preventDefault();
@@ -43,8 +50,6 @@ function validateForm() {
     checkLength(address.value, 25)
   ) {
     validationSuccess.style.display = "block";
-  } else {
-    validationSuccess.style.display = "none";
   }
 
   console.log("Seems it worked");
@@ -52,16 +57,19 @@ function validateForm() {
 
 form.addEventListener("submit", validateForm);
 
-function checkLength(value, inputLength) {
+//
+// checkLength() and validateEmail() moved to components folder for refactoring
+
+/* function checkLength(value, inputLength) {
   if (value.trim().length > inputLength) {
     return true;
   } else {
     return false;
   }
-}
+} */
 
-function validateEmail(email) {
+/* function validateEmail(email) {
   const regEx = /\S+@\S+\.\S+/;
   const patternMatches = regEx.test(email);
   return patternMatches;
-}
+} */
