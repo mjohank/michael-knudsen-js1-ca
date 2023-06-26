@@ -10,7 +10,7 @@ const queryString = document.location.search;
 const params = new URLSearchParams(queryString);
 const id = params.get("id");
 
-const detailsURL = "https://imdb-top-100-movies.p.rapidapi.scom/" + id;
+const detailsURL = "https://imdb-top-100-movies.p.rapidapi.com/" + id;
 
 const options = {
   method: "GET",
